@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     /*
@@ -41,11 +40,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('HOST'),
-            'port' => env('PORT'),
-            'database' => env('DATABASE'),
-            'username' => env('USER'),
-            'password' => env('PASSWORD'),
+            'host' => env('HOST', 'some_host'),
+            'port' => env('PORT', 'some_port'),
+            'database' => env('DATABASE', 'some_DB'),
+            'username' => env('USER', 'some_user'),
+            'password' => env('PASSWORD', 'some_password'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
