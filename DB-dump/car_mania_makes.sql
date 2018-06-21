@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `makes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `makes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `make` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `make` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `make_code` int(10) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `makes_make_unique` (`make`),
   UNIQUE KEY `makes_make_code_unique` (`make_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
