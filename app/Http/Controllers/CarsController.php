@@ -49,7 +49,7 @@ class CarsController extends Controller
 
     public function store() {
         $this->validateInput();
-        validate(request(), [
+        $this->validate(request(), [
             'image' => 'required|mimes:jpeg,png|max:2048'
         ]);
 
