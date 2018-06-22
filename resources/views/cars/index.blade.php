@@ -37,9 +37,13 @@
                                 <button type="button" class="btn btn-sm btn-outline-secondary">
                                     <a href="/cars/{{ $car->id }}/edit" class="editview">Edit</a>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-outline-danger">
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </button>
+                                <form class="" action="/cars/{{ $car->id }}" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </button>
+                                </form>
                             </div>
                             <small class="text-muted">Posted {{ \Carbon\Carbon::createFromTimeStamp(strtotime($car->created_at))->diffForHumans() }}</small>
                         </div>
