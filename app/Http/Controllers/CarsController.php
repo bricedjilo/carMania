@@ -55,7 +55,7 @@ class CarsController extends Controller
 
         $image = request()->file('image');
         $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/images');
+        $destinationPath = public_path('images');
         $image->move($destinationPath, $input['imagename']);
 
         Car::create([
@@ -71,6 +71,7 @@ class CarsController extends Controller
 
     public function destroy(Car $car) {
         Car::destroy($car->id);
+        unlink("/images/$car->image");
         return redirect('/');
     }
 
